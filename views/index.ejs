@@ -1,0 +1,38 @@
+<%- include("header.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<body>
+    <section id="home" class="section container">
+        <h1 class="tag">👋 Hello</h1>
+        <p class="content">Welcome to our blog, your one-stop destination for insightful articles, 
+        exciting stories, and a wealth of knowledge on a wide range of topics. Whether you're 
+        passionate about travel, technology, lifestyle, or anything in between, our blog has 
+        something for everyone. We believe in the power of sharing experiences and ideas, and
+        our dedicated team of writers is here to bring you fresh and engaging content. Explore
+        our collection of articles, tips, and personal narratives that inspire, inform, and 
+        entertain. Plus, we encourage you to become a part of our growing community by 
+        contributing your unique perspective. Share your own stories, expertise, and interests
+        with our readers. We can't wait to read your blogs and connect with you on this exciting
+        journey of learning and discovery.
+        </p>
+    </section>
+
+    <section class="section posts">
+        <% posts.forEach((post, index) => { %>
+            <div class="post">
+                <p style="font-style: italic;">By <%= post.name %>, <%= post.day %> <%= post.time %> </p>
+                <h2><%= post.title %></h2>
+                <p><%= post.content.substring(0, 435) %>...<a href="/post/<%= posts.length - index - 1 %>" class="read-more">Read more</a></p>
+            </div>
+        <% }); %>
+    </section>
+    
+</body>
+</html>

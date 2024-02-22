@@ -1,0 +1,20 @@
+<%- include("header.ejs") %>
+
+<link rel="stylesheet" type="text/css" href="/main.css">
+<section class="section container">
+    <h1 class="tag"><%= post.title %></h1>
+    <div class="post">
+        <p style="font-style: italic;"><%= post.day %> <%= post.time %></p>
+        <p><%= post.content %></p>
+        <p style="text-align: right;">- <%= post.name %></p>
+        <div class="buttons">
+            <form action="/edit/<%= post.id %>" method="GET" style="display: inline-block;">
+                <button type="submit" class="edit btn">Edit</button>
+            </form>
+            <form action="/delete/<%= post.id%>" method="POST" style="display: inline-block;">
+                <button type="submit" class="delete btn">Delete</button>
+            </form> 
+        </div>
+    </div>
+</section>
+

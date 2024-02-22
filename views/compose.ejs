@@ -1,0 +1,12 @@
+<%- include("header.ejs") %>
+
+<link rel="stylesheet" type="text/css" href="/main.css">
+<section id="compose" class="section container">
+    <h1 class="tag">Compose</h1>
+    <form action="/compose" method="POST" class="compose">
+        <input type="text" name="title" class="title input" placeholder="Title" required="">
+        <textarea id="wide-text" name="content" class="thoughts input" rows="7" cols="80" required="" placeholder="Enter your thoughts"></textarea>
+        <input type="text" name="name" class="name input" required="" placeholder="Enter name">
+        <input type="submit" class="btn" value="Publish">
+    </form>
+</section>
